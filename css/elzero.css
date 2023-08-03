@@ -48,7 +48,54 @@ a {
 }
 /* End Global Rules */
 /* Start Components */
-
+.section-title {
+	text-transform: uppercase;
+	margin: auto;
+	width: fit-content;
+	border: 1px solid black;
+	padding: 10px 20px;
+	margin-bottom: 100px;
+	font-size: 35px;
+	position: relative;
+	transition: color 0.3s, border-color 0.3s;
+}
+.section-title:hover {
+	color: white;
+	border-color: transparent;
+	transition-delay: 0.6s;
+}
+.section-title::before,
+.section-title::after {
+	content: "";
+	position: absolute;
+	background-color: var(--main-color);
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	z-index: -1;
+}
+.section-title::before {
+	left: -40px;
+}
+.section-title::after {
+	right: -40px;
+}
+.section-title:hover::before,
+.section-title:hover::after {
+	transition: border-radius 0.3s 0.3s linear, left 0.3s linear,
+		right 0.3s linear, width 0.3s 0.3s linear, height 0.3s 0.3s linear;
+	border-radius: 0;
+	width: 50%;
+	height: 100%;
+}
+.section-title:hover::before {
+	left: 0;
+}
+.section-title:hover::after {
+	right: 0;
+}
 /* End Components */
 /* Start Header */
 header {
@@ -66,6 +113,9 @@ header .container {
 	font-size: 25px;
 	font-weight: bold;
 	color: var(--main-color);
+	height: 73px;
+	display: flex;
+	align-items: center;
 }
 .nav {
 	display: flex;

@@ -565,6 +565,80 @@ header .container {
 	color: #ffc107;
 }
 /* End Testimonials */
+/* Start Members */
+.members {
+	padding: var(--section-padding) 0;
+}
+.members .container {
+	margin-top: 100px;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 30px;
+}
+.members .container .card {
+	position: relative;
+	padding-top: 70px;
+	overflow: hidden;
+	border-radius: 15px;
+}
+.members .container .card::before,
+.members .container .card::after {
+	content: "";
+	position: absolute;
+	inset: 0 0 0 50px;
+	background-color: #f3f3f3;
+	z-index: -1;
+	border-radius: 15px;
+}
+.members .container .card::after {
+	background-color: #e4e4e4;
+	transform-origin: right;
+	transform: translateX(100%);
+	transition: transform 0.3s;
+}
+.members .container .card:hover::after {
+	transform: translateX(0);
+}
+.members .container .card .show {
+	display: flex;
+}
+.members .container .card .show img {
+	max-width: 100%;
+	border-radius: 10px;
+	transition: filter 0.3s;
+}
+.members .container .card:hover .show img {
+	filter: grayscale(100%);
+}
+.members .container .card .show .socials {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+}
+.members .container .card .show .socials a {
+	padding: 20px;
+}
+.members .container .card .show .socials i {
+	color: #777;
+}
+.members .container .card .show .socials a:hover i {
+	color: var(--main-color);
+}
+.members .container .card .text {
+	padding: 20px;
+	margin-left: 50px;
+}
+.members .container .card .text h3 {
+	color: var(--main-color);
+	font-size: 24px;
+	margin-bottom: 10px;
+	transition: color 0.3s;
+}
+.members .container .card:hover .text h3 {
+	color: #777;
+}
+/* End Members */
 /* Start animation */
 @keyframes image-float {
 	0%,

@@ -133,6 +133,7 @@ header .container {
 	display: block;
 	position: relative;
 	transition: background-color 0.3s, color 0.3s;
+	z-index: 2;
 }
 .nav > li > a {
 	display: block;
@@ -182,11 +183,20 @@ header .container {
 	visibility: hidden;
 	opacity: 0;
 	background-color: white;
-	z-index: 10;
+	z-index: 1;
+	border-top: 2px solid #ccc;
+}
+.mega-menu::before {
+	content: "";
+	position: absolute;
+	top: -30px;
+	right: 0;
+	left: 0;
+	height: 30px;
 }
 .other-links:hover + .mega-menu,
 .mega-menu:hover {
-	translate: 0 2px;
+	translate: 0;
 	visibility: visible;
 	opacity: 1;
 }

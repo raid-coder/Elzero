@@ -378,7 +378,7 @@ header .container {
 	background-size: 30px 15px;
 	background-repeat: repeat-x;
 }
-.container {
+.gallery .container {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 	gap: 30px;
@@ -414,6 +414,111 @@ header .container {
 	transition: scale 0.2s, opacity 0.5s 0.2s;
 }
 /* End Gallery */
+/* Start Features */
+/* End Features */
+.features {
+	padding: var(--section-padding) 0;
+}
+.features .container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 30px;
+}
+.features .container .card {
+	border: 1px solid #ccc;
+	text-align: center;
+}
+.features .container .card.card--red {
+	--card-color: #f44036;
+}
+.features .container .card.card--green {
+	--card-color: #009688;
+}
+.features .container .card.card--blue {
+	--card-color: #03a9f4;
+}
+.features .container .card .text {
+	padding: 0 20px 20px;
+}
+.features .container .card .image {
+	position: relative;
+	overflow: hidden;
+}
+.features .container .card .image::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: var(--card-color, transparent);
+	opacity: 0.6;
+}
+.features .container .card .image::after {
+	content: "";
+	position: absolute;
+	background-color: white;
+	inset: 40% -1px 0;
+	translate: 0 50px;
+	transform-origin: right;
+	transform: skew(0, -21deg);
+	transition: transform 0.25s;
+}
+.features .container .card:hover .image::after {
+	transform: skew(76deg, -21deg);
+}
+.features .container .card img {
+	max-width: 100%;
+}
+.features .container .card h3 {
+	padding-bottom: 20px;
+	font-size: 40px;
+	position: relative;
+	width: fit-content;
+	margin: 0 auto 30px;
+}
+.features .container .card h3::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 30px);
+	height: 5px;
+	background-color: var(--card-color, black);
+}
+.features .container .card p {
+	line-height: 2;
+	font-size: 20px;
+	color: #777;
+	margin-bottom: 50px;
+}
+.features .container .card a {
+	display: block;
+	width: fit-content;
+	font-size: 24px;
+	font-weight: bold;
+	color: var(--card-color, black);
+	border: 3px solid var(--card-color, black);
+	margin: 0 auto;
+	padding: 8px 25px;
+	border-radius: 8px;
+	position: relative;
+	transition: color 0.2s;
+}
+.features .container .card a::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: var(--card-color);
+	z-index: -1;
+	transform-origin: left;
+	scale: 0 1;
+	transition: scale 0.2s;
+}
+.features .container .card:hover a {
+	color: white;
+}
+.features .container .card:hover a::before {
+	scale: 1 1;
+}
 /* Start animation */
 @keyframes image-float {
 	0%,

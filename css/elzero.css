@@ -60,6 +60,7 @@ a {
 	position: relative;
 	transition: color 0.3s, border-color 0.3s;
 	z-index: 1;
+	cursor: default;
 }
 .section-title:hover {
 	color: white;
@@ -790,6 +791,73 @@ header .container {
 	background-color: var(--main-color);
 }
 /* End Skills */
+/* Start Word Steps */
+.work-steps {
+	padding: var(--section-padding) 0;
+	background-color: var(--secondary-color);
+}
+.work-steps .container {
+	display: flex;
+	gap: 100px;
+	align-items: center;
+}
+@media (max-width: 991px) {
+	.work-steps .container {
+		flex-direction: column;
+	}
+}
+.work-steps .container img {
+	max-width: 100%;
+}
+.work-steps .container .categories .box {
+	padding: 40px;
+	display: flex;
+	gap: 40px;
+	background-color: #f6f5f5;
+	border: 1px solid white;
+	border-radius: 8px;
+	margin-bottom: 20px;
+	align-items: center;
+	position: relative;
+	isolation: isolate;
+}
+@media (max-width: 767px) {
+	.work-steps .container .categories .box {
+		text-align: center;
+		flex-direction: column;
+	}
+}
+.work-steps .container .categories .box::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: #ededed;
+	z-index: -1;
+	scale: 0;
+	transition: scale 0.3s;
+}
+.work-steps .container .categories .box:hover::before {
+	scale: 1;
+}
+.work-steps .container .categories .box .image-holder {
+	width: 70px;
+	flex-shrink: 0;
+}
+.work-steps .container .categories .box img {
+	max-width: 100%;
+}
+.work-steps .container .categories .box .text h3 {
+	font-size: 22px;
+	margin-bottom: 10px;
+	cursor: default;
+}
+.work-steps .container .categories .box .text p {
+	line-height: 1.8;
+	font-size: 18px;
+	color: #777;
+	cursor: default;
+}
+/* End Word Steps */
 /* Start animation */
 @keyframes image-float {
 	0%,

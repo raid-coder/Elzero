@@ -649,6 +649,89 @@ header .container {
 	color: #777;
 }
 /* End Members */
+.services {
+	padding: var(--section-padding) 0;
+	background-color: var(--secondary-color);
+	background-image: linear-gradient(135deg, white 30%, transparent 30%),
+		linear-gradient(-135deg, white 30%, transparent 30%);
+	background-size: 30px 15px;
+	background-repeat: repeat-x;
+}
+.services .container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 30px;
+}
+.services .container .box {
+	background-color: white;
+	text-align: center;
+	padding-top: 40px;
+	box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+	counter-increment: box-counter;
+	transition: transform 0.3s;
+}
+.services .container .box:hover {
+	transform: translateY(-10px);
+}
+.services .container .box::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	width: 0;
+	left: 50%;
+	height: 5px;
+	background-color: var(--main-color);
+	transition: width 0.3s;
+	transform: translateX(-50%);
+}
+.services .container .box:hover::before {
+	width: 100%;
+}
+.services .container .box i {
+	font-size: 70px;
+	color: #ccc;
+	margin-bottom: 20px;
+}
+.services .container .box h3 {
+	font-size: 26px;
+	color: var(--main-color);
+	margin-bottom: 20px;
+}
+.services .container .box .details {
+	text-align: right;
+	padding: 15px 10px;
+	position: relative;
+	background-color: #f9f9f9;
+	overflow: hidden;
+}
+.services .container .box .details a {
+	color: var(--main-color);
+}
+.services .container .box .details::before {
+	content: "0" counter(box-counter);
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100px;
+	background-color: var(--main-color);
+	color: white;
+	display: flex;
+	align-items: center;
+	font-size: 28px;
+	font-weight: bold;
+	text-indent: 25px;
+}
+.services .container .box .details::after {
+	content: "";
+	position: absolute;
+	top: -1px;
+	bottom: -1px;
+	background-color: #d5d5d5;
+	width: 50px;
+	left: 80px;
+	transform: skewX(-30deg);
+}
 /* Start animation */
 @keyframes image-float {
 	0%,

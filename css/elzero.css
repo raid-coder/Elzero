@@ -1249,7 +1249,7 @@ header .container {
 	}
 }
 .discount .info {
-	animation: change-background 10s infinite alternate;
+	background-image: url(../images/discount-background1.jpg);
 	background-size: cover;
 	flex: 1;
 	color: white;
@@ -1267,6 +1267,15 @@ header .container {
 	}
 }
 .discount .info::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: url(../images/discount-background2.jpg);
+	background-size: cover;
+	z-index: -1;
+	animation: change-background 10s infinite alternate;
+}
+.discount .info::after {
 	content: "";
 	position: absolute;
 	inset: 0;
@@ -1373,10 +1382,10 @@ header .container {
 }
 @keyframes change-background {
 	0% {
-		background-image: url(../images/discount-background1.jpg);
+		opacity: 0;
 	}
 	100% {
-		background-image: url(../images/discount-background2.jpg);
+		opacity: 1;
 	}
 }
 /* End animation */

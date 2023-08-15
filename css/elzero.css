@@ -1238,6 +1238,114 @@ header .container {
 	opacity: 1;
 }
 /* End Stats */
+/* Start Discount */
+.discount {
+	display: flex;
+	text-align: center;
+}
+@media (width < 992px) {
+	.discount {
+		flex-wrap: wrap;
+	}
+}
+.discount .info {
+	animation: change-background 10s infinite alternate;
+	background-size: cover;
+	flex: 1;
+	color: white;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+@media (width < 992px) {
+	.discount .info {
+		flex-basis: 100%;
+		padding: 80px 0;
+	}
+}
+.discount .info::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-color: var(--main-color-alt);
+	opacity: 0.97;
+	z-index: -1;
+}
+.discount .info h2 {
+	font-size: 40px;
+	margin-bottom: 40px;
+}
+.discount .info p {
+	line-height: 1.6;
+	padding: 0 90px;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+@media (width < 992px) {
+	.discount .info p {
+		padding: 0 20px;
+	}
+}
+.discount .info img {
+	width: 300px;
+}
+.discount .request {
+	flex: 1;
+	padding: 200px 0;
+}
+@media (width < 992px) {
+	.discount .request {
+		padding: 100px 0;
+	}
+}
+.discount .request h3 {
+	font-size: 40px;
+	margin-bottom: 30px;
+}
+.discount .request form {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	width: 300px;
+	margin: auto;
+}
+.discount .request form > * {
+	padding: 15px;
+}
+.discount .name-input,
+.discount .email-input,
+.discount .phone-input,
+.discount .description-input {
+	background-color: #f9f9f9;
+	border: none;
+	border-bottom: 2px solid #ccc;
+	caret-color: var(--main-color);
+
+	&:focus,
+	&:active {
+		outline-color: var(--main-color);
+	}
+}
+.discount .description-input {
+	height: 200px;
+	resize: none;
+}
+.discount .submit-btn {
+	background-color: var(--main-color);
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.discount .submit-btn:hover {
+	background-color: var(--main-color-alt);
+}
+/* End Discount */
 /* Start animation */
 @keyframes image-float {
 	0%,
@@ -1261,6 +1369,14 @@ header .container {
 @keyframes right-left {
 	0% {
 		transform: translateX(-15px);
+	}
+}
+@keyframes change-background {
+	0% {
+		background-image: url(../images/discount-background1.jpg);
+	}
+	100% {
+		background-image: url(../images/discount-background2.jpg);
 	}
 }
 /* End animation */

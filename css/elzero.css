@@ -962,6 +962,11 @@ header .container {
 .events .container form .email-input:focus,
 .events .container form .email-input:active {
 	outline-color: var(--main-color);
+
+	&::placeholder {
+		opacity: 0;
+		transition: opacity 0.3s;
+	}
 }
 .events .container form .submit-btn {
 	background-color: var(--main-color);

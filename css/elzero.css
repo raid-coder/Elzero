@@ -1355,6 +1355,110 @@ header .container {
 	background-color: var(--main-color-alt);
 }
 /* End Discount */
+/* Start Footer */
+footer {
+	background-color: #191919;
+	color: white;
+}
+footer .container {
+	padding: 70px 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	gap: 30px;
+}
+footer .container .social-info h2 {
+	font-size: 50px;
+	margin-bottom: 20px;
+}
+footer .container .social-info .socials {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 20px;
+}
+footer .container .social-info .socials a {
+	background-color: #313131;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s;
+}
+footer .container .social-info .socials a.facebook:hover {
+	background-color: #1877f2;
+}
+footer .container .social-info .socials a.twitter:hover {
+	background-color: #1da1f2;
+}
+footer .container .social-info .socials a.youtube:hover {
+	background-color: #ff0000;
+}
+footer .container .social-info .socials a i {
+	font-size: 20px;
+	color: #b9b9b9;
+}
+footer .container .social-info p {
+	line-height: 1.8;
+	opacity: 0.6;
+	font-size: 18px;
+}
+footer .container .links li {
+	display: block;
+	padding: 15px;
+	transition: padding-left 0.3s;
+}
+footer .container .links li:hover {
+	padding-left: 25px;
+}
+footer .container .links li:not(:last-child) {
+	border-bottom: 1px solid #444;
+}
+footer .container .links li a {
+	color: #b9b9b9;
+	transition: color 0.3s;
+}
+footer .container .links li:hover a {
+	color: white;
+}
+footer .container .links li a::before {
+	content: "\f101";
+	font-family: "font awesome 5 free";
+	font-weight: 900;
+	color: var(--main-color);
+	margin-right: 10px;
+}
+footer .container .info {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+footer .container .info > div {
+	display: flex;
+	gap: 20px;
+	line-height: 1.8;
+	color: #b9b9b9;
+	align-items: center;
+}
+footer .container .info i {
+	font-size: 24px;
+	color: var(--main-color);
+}
+footer .container .images {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 10px;
+	align-content: flex-start;
+}
+footer .container .images img {
+	max-width: 100%;
+	border: 3px solid white;
+}
+footer .autor {
+	text-align: center;
+	padding: 30px;
+	border-top: 1px solid #444;
+}
+/* End Footer */
 /* Start animation */
 @keyframes image-float {
 	0%,
